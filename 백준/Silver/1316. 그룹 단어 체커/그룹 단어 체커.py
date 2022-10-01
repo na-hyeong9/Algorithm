@@ -1,12 +1,12 @@
-N = int(input())
-group = N
+num = int(input())
+result = num
 
-for _ in range(N):
+for i in range(num):
     word = input()
-    for i in range(len(word)-1):
-        if word[i] == word[i+1]:
-            continue
-        elif word[i] in word[i+1:]:
-            group -= 1
+    for j in range(0, len(word)-1):
+        if word[j] == word[j+1]:
+            pass
+        elif word[j] in word[j+1:]:
+            result -= 1
             break
-print(group)
+print(result)
