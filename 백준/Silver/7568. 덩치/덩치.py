@@ -1,13 +1,13 @@
-N = int(input())
-B = []
+T = int(input())
+li = []
 
-for _ in range(N):
+for _ in range(T):
     x, y = map(int, input().split())
-    B.append((x,y))
+    li.append((x,y))
 
-for i in B:
+for j in li:
     rank = 1
-    for j in B:
-        if i[0] < j[0] and i[1] < j[1]: #조건
-            rank+=1
-    print(rank, end = " ")
+    for k in li:
+        if (j[0] <k[0]) & (j[1] <k[1]):
+            rank += 1
+    print(rank, end=" ")
