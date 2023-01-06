@@ -1,26 +1,12 @@
-import sys
-
-input = sys.stdin.readline
-
+n = int(input())
+li = list(map(int, input().split()))
 
 def gcd(a, b):
-    if a > b:
-        pass
-    else:
-        a, b = b, a
-
     while b > 0:
-        r = a % b
-        a, b = b, r
-
+        n = a % b
+        a, b = b, n
     return a
 
-
-n = int(input())
-rings = list(map(int, input().split()))
-first = rings[0]
-
-for i, ring in enumerate(rings):
-    if i == 0: continue
-    g = gcd(first, ring)
-    print(first // g, '/', ring // g, sep='')
+for i in range(1, n):
+    g = gcd(li[0], li[i])
+    print(f'{li[0]//g}/{li[i]//g}')
